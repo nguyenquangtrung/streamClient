@@ -7,7 +7,8 @@ import Login from './components/login_component/Login';
 import Home from './components/home_component/Home';
 import Menu from './components/menu_component/Menu';
 import Message from './components/home_component/Message';
-import Call from './components/home_component/Call'
+import Call from './components/home_component/Call';
+import Sign from './components/sign_component/SignComponent'
  const ProfileView = DrawerNavigator({
     Main_Screen:{
         screen:props => <Home {...props}/>,
@@ -32,6 +33,12 @@ export const AppScreen = StackNavigator({
     Message_Screen:{
         screen:Message
     },
+    Call_Screen:{
+        screen:Call
+    },
+    Sign_Screen:{
+        screen:Sign
+    }
   
 
    

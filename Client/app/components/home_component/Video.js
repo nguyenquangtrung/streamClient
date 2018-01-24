@@ -25,9 +25,7 @@ const pcPeers = {};
 let localStream;
 let container;
 
-const configuration = { "iceServers": [{ "url": "stun:stun.l.google.com:19302" }] };
-
-
+const configuration = { "iceServers": [{ "url": "stun:stun3.l.google.com:19302"}] };
 function getLocalStream(isFront, cb) {
   MediaStreamTrack
     .getSources()

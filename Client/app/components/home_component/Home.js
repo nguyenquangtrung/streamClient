@@ -26,8 +26,11 @@ class Home extends Component {
 
   componentWillMount() {
     this.props.socket.on("ANSWER", function (data) {
-      if (data !== null) {
-        that.props.navigation.navigate("Message_Screen", { type: "answer",data:data});
+      if (data.type === 'call') {
+        console.log("Home_Screen");
+        that.props.navigation.navigate("Call_Screen", { type: "answer",data:data});
+      }else{
+        
       }
     });
 
@@ -60,7 +63,7 @@ class Home extends Component {
             return (
               <TouchableOpacity onPress={() => { this.props.navigation.navigate("Message_Screen", { item: item}) }} style={{ flexDirection: 'row', borderBottomColor: '#2c2c2c', height: 80, borderBottomWidth: 0.2 }}>
                 <View style={{ flex: 10, flexDirection: 'row', alignItems: 'center' }}>
-                  <Image source={{ uri: 'http://nerdreactor.com/wp-content/uploads/2017/03/avtr-he-bg-03.jpg' }} style={{ width: 60, height: 60, borderRadius: 30, marginLeft: 12 }} />
+                  <Image source={{ uri: item.avatar }} style={{ width: 60, height: 60, borderRadius: 30, marginLeft: 12 }} />
                   <View style={{ marginLeft: 10 }}>
                     <Text style={{ fontSize: 18, fontWeight: '600', color: '#757575', marginBottom: 2, fontFamily: 'serif' }}>{item.name}</Text>
                     <Text style={{ fontSize: 15, fontFamily: 'serifrr' }}>{item.email}</Text>

@@ -78,7 +78,6 @@ import { emailValidator } from '../../../validator/Validator'
           <TextInput
             onFocus={() => { this.setState({ check: false, errMessage: '' }) }}
             ref="email"
-            autoFocus={true}
             returnKeyType={"next"}
             onChangeText={(text) => { this.setState({ email: text }) }}
             placeholder="Email"

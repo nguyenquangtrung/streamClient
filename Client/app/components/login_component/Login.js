@@ -23,7 +23,7 @@ export default class Login extends Component<{}> {
 				<Form type="Login" open={this.openHomeScreen.bind(this)} />
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Don't have an account yet?</Text>
-					<TouchableOpacity><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
+					<TouchableOpacity onPress={() =>{this.props.navigation.navigate("Sign_Screen")}}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
 				</View>
 			</View>	
 			)
@@ -45,11 +45,13 @@ const styles = StyleSheet.create({
   },
   signupText: {
   	color:'rgba(255,255,255,0.6)',
-  	fontSize:16
+    fontSize:16,
+    fontFamily:'serif'
   },
   signupButton: {
   	color:'#ffffff',
   	fontSize:16,
-  	fontWeight:'500'
+    fontWeight:'500',
+    fontFamily:'serif'
   }
 });
